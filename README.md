@@ -116,6 +116,29 @@ pnpm build          # apps/extension/dist を生成
 
 > `generated/catalog-ja-jp.json` はサンプルデータ。実際のGame Pass対象を反映したものではない（Catalog Builder実装で置き換える）。
 
+## パッケージング & リリース
+
+```bash
+# dist をビルドして extension.zip を作成（Chrome Web Store へアップロードする成果物）
+pnpm --filter @gamepass-indicator/extension package
+
+# アイコンを再生成（icons/*.png。本番用デザインができたら差し替え）
+pnpm --filter @gamepass-indicator/extension gen-icons
+```
+
+### CI（自動ビルド）
+- `.github/workflows/ci.yml`: push(main)/PR で typecheck・unit・E2E・`package` を実行し、`extension.zip` を**Artifact**として保存
+- `.github/workflows/extension-release.yml`: `v*` タグの push で zip をビルドし **GitHub Release** に添付
+
+### Chrome Web Store 公開手順
+1. `manifest.json` の `version` を上げる（公開ごとに増やす。再利用不可）
+2. `git tag v0.1.1 && git push origin v0.1.1` → Release に zip が付く（または CI Artifact / ローカル `package` の zip を使う）
+3. [Developer Dashboard](https://chrome.google.com/webstore/devconsole)（初回のみ $5 登録）で zip をアップロード
+4. リスティング入力: アイコン128×128（`icons/icon-128.png`）、スクリーンショット（1280×800 か 640×400）、説明、カテゴリ、言語、プライバシー慣行の申告（本拡張は個人データ非収集）
+5. 送信 → 審査（数時間〜数日）
+
+Edge Add-ons は [Partner Center](https://partner.microsoft.com/dashboard/microsoftedge)（無料）へ同じ zip をアップロードすれば公開できる。
+
 ## テスト
 
 ```bash

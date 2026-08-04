@@ -6,6 +6,8 @@
   "description": "Steam Game Pass Indicator Chrome拡張 (Manifest V3)",
   "scripts": {
     "build": "node build.mjs",
+    "gen-icons": "node scripts/gen-icons.mjs",
+    "package": "node build.mjs && rm -f extension.zip && (cd dist && zip -qr ../extension.zip .)",
     "typecheck": "tsc -p tsconfig.json",
     "test:e2e": "node build.mjs && playwright test"
   },

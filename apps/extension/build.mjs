@@ -35,6 +35,7 @@ async function copyStatic() {
   await cp(resolve(root, "manifest.json"), resolve(outdir, "manifest.json"));
   await cp(resolve(root, "options.html"), resolve(outdir, "options.html"));
   await cp(resolve(root, "src/styles.css"), resolve(outdir, "styles.css"));
+  await cp(resolve(root, "icons"), resolve(outdir, "icons"), { recursive: true });
 }
 
 await rm(outdir, { recursive: true, force: true });

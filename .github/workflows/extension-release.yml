@@ -1,0 +1,44 @@
+name: Release Extension
+
+# v0.1.0 のようなタグを push すると拡張をビルド・パッケージして
+# GitHub Release に zip を添付する。Chrome Web Store へはこの zip を手動アップロードする。
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Package extension
+        run: pnpm --filter @gamepass-indicator/extension package
+
+      - name: Name the artifact
+        id: artifact
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          NAME="steam-gamepass-indicator-${TAG}.zip"
+          cp apps/extension/extension.zip "$NAME"
+          echo "name=$NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.artifact.outputs.name }}
+          generate_release_notes: true
