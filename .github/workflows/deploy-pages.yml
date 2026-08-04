@@ -7,6 +7,11 @@ on:
     branches: [main]
     paths:
       - "generated/**"
+  # nightly の Update Game Pass Catalog 完了後に自動デプロイする。
+  # （GITHUB_TOKEN のコミットは push トリガーを発火しないため workflow_run で拾う）
+  workflow_run:
+    workflows: ["Update Game Pass Catalog"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -21,11 +26,18 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # workflow_run の場合は成功時のみデプロイ（失敗した更新は公開しない）。
+    if: >
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
+      # main の最新（＝nightlyがpushしたカタログを含む）を取得する。
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
