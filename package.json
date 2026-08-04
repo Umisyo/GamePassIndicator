@@ -1,0 +1,26 @@
+{
+  "name": "steam-gamepass-indicator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SteamストアでPC Game Pass対象作品を表示するChrome拡張とカタログ生成のモノレポ",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "pnpm --filter @gamepass-indicator/extension build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "pnpm --filter @gamepass-indicator/extension test:e2e"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  }
+}

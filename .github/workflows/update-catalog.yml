@@ -1,0 +1,47 @@
+name: Update Game Pass Catalog
+
+on:
+  schedule:
+    # 1日2回（UTC）。日本時間の朝と夜あたり。
+    - cron: "15 2,14 * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      # 生成前に純粋ロジックを検証（照合・バリデーション・生成のテスト）。
+      - run: pnpm test
+
+      # 取得→照合→検証→生成。live取得やバリデーション失敗時はここで停止し、
+      # 空カタログや大量削除を公開しない。
+      # nightly の安定性を優先し appdetails は無効化(--no-enrich)。
+      # Steamストア検索のスロットリングを避けるため並列度は2に抑える。
+      - name: Build catalog
+        run: >
+          pnpm --filter @gamepass-indicator/catalog-builder build
+          --concurrency 2 --no-enrich
+
+      - name: Commit if changed
+        run: |
+          if [[ -n "$(git status --porcelain generated/)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add generated/
+            git commit -m "chore: update Game Pass catalog"
+            git push
+          else
+            echo "変更なし"
+          fi

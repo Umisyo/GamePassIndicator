@@ -1,0 +1,74 @@
+{
+  "Products": [
+    {
+      "ProductId": "C1C4DZJPBC2V",
+      "LocalizedProperties": [
+        {
+          "ProductTitle": "Overwatch®",
+          "PublisherName": "Blizzard Entertainment"
+        }
+      ],
+      "MarketProperties": [
+        {
+          "OriginalReleaseDate": "2022-10-04T18:00:00.0000000Z"
+        }
+      ]
+    },
+    {
+      "ProductId": "9N6J4RNFPKKL",
+      "LocalizedProperties": [
+        {
+          "ProductTitle": "Halo: Campaign Evolved - Standard Edition",
+          "PublisherName": "Xbox Game Studios"
+        }
+      ],
+      "MarketProperties": [
+        {
+          "OriginalReleaseDate": "2026-07-28T15:00:00.0000000Z"
+        }
+      ]
+    },
+    {
+      "ProductId": "9N2FJQC9NTX6",
+      "LocalizedProperties": [
+        {
+          "ProductTitle": "NBA 2K26 Standard Edition (Windows PC)",
+          "PublisherName": "2K"
+        }
+      ],
+      "MarketProperties": [
+        {
+          "OriginalReleaseDate": "2026-04-03T15:00:00.0000000Z"
+        }
+      ]
+    },
+    {
+      "ProductId": "9P1P7DWHBDBD",
+      "LocalizedProperties": [
+        {
+          "ProductTitle": "Star Wars Outlaws",
+          "PublisherName": "Ubisoft"
+        }
+      ],
+      "MarketProperties": [
+        {
+          "OriginalReleaseDate": "2026-07-21T14:00:00.0000000Z"
+        }
+      ]
+    },
+    {
+      "ProductId": "9NPDN9R45JX4",
+      "LocalizedProperties": [
+        {
+          "ProductTitle": "1000xRESIST",
+          "PublisherName": "Fellow Traveller"
+        }
+      ],
+      "MarketProperties": [
+        {
+          "OriginalReleaseDate": "2025-11-04T16:00:00.0000000Z"
+        }
+      ]
+    }
+  ]
+}

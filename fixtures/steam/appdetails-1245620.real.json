@@ -1,0 +1,20 @@
+{
+  "1245620": {
+    "success": true,
+    "data": {
+      "type": "game",
+      "name": "ELDEN RING",
+      "release_date": {
+        "coming_soon": false,
+        "date": "24 Feb, 2022"
+      },
+      "developers": [
+        "FromSoftware, Inc."
+      ],
+      "publishers": [
+        "FromSoftware, Inc.",
+        "Bandai Namco Entertainment"
+      ]
+    }
+  }
+}

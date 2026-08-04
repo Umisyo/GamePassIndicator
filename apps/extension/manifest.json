@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Steam Game Pass Indicator",
+  "version": "0.1.0",
+  "description": "Steamストア上でPC Game Pass対象作品を表示します",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://store.steampowered.com/*",
+    "https://umisyo.github.io/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://store.steampowered.com/app/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://store.steampowered.com/search/*",
+        "https://store.steampowered.com/wishlist/*"
+      ],
+      "js": ["content-list.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "options_page": "options.html"
+}

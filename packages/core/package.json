@@ -1,0 +1,13 @@
+{
+  "name": "@gamepass-indicator/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Chrome拡張版とMillennium版で共有する純粋ロジック",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}

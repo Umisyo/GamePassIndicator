@@ -1,0 +1,55 @@
+{
+  "total": 5,
+  "items": [
+    {
+      "type": "app",
+      "name": "ELDEN RING",
+      "id": 1245620,
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      }
+    },
+    {
+      "type": "app",
+      "name": "ELDEN RING NIGHTREIGN",
+      "id": 2622380,
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      }
+    },
+    {
+      "type": "app",
+      "name": "ELDEN RING Shadow of the Erdtree",
+      "id": 2778580,
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      }
+    },
+    {
+      "type": "app",
+      "name": "ELDEN RING NIGHTREIGN The Forsaken Hollows",
+      "id": 3531720,
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      }
+    },
+    {
+      "type": "app",
+      "name": "ELDEN RING Shadow of the Erdtree Premium Bundle",
+      "id": 2778590,
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@gamepass-indicator/extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Steam Game Pass Indicator Chrome拡張 (Manifest V3)",
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "tsc -p tsconfig.json",
+    "test:e2e": "node build.mjs && playwright test"
+  },
+  "dependencies": {
+    "@gamepass-indicator/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "esbuild": "^0.24.2"
+  }
+}

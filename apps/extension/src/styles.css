@@ -1,0 +1,64 @@
+.steam-gamepass-indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 0 12px 0;
+  padding: 12px 14px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #107c10 0%, #0b5c0b 100%);
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.steam-gamepass-indicator__heading {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.steam-gamepass-indicator__status {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.steam-gamepass-indicator__leaving {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.steam-gamepass-indicator__link {
+  align-self: flex-start;
+  margin-top: 4px;
+  padding: 4px 10px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.steam-gamepass-indicator__link:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* 検索結果・ウィッシュリスト行に付ける小さなアイコン */
+.steam-gamepass-list-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 6px 0 0;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: #107c10;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+

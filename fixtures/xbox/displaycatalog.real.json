@@ -1,0 +1,79 @@
+{
+  "Products": [
+    {
+      "ProductId": "C1C4DZJPBC2V",
+      "LocalizedProperties": [
+        {
+          "ProductTitle": "「オーバーウォッチ®」",
+          "PublisherName": "Blizzard Entertainment",
+          "DeveloperName": "Blizzard Entertainment"
+        }
+      ],
+      "MarketProperties": [
+        {
+          "OriginalReleaseDate": "2022-10-04T18:00:00.0000000Z"
+        }
+      ]
+    },
+    {
+      "ProductId": "9N6J4RNFPKKL",
+      "LocalizedProperties": [
+        {
+          "ProductTitle": "『Halo: Campaign Evolved - スタンダード エディション』",
+          "PublisherName": "Xbox Game Studios",
+          "DeveloperName": "Halo Studios"
+        }
+      ],
+      "MarketProperties": [
+        {
+          "OriginalReleaseDate": "2026-07-28T15:00:00.0000000Z"
+        }
+      ]
+    },
+    {
+      "ProductId": "9N2FJQC9NTX6",
+      "LocalizedProperties": [
+        {
+          "ProductTitle": "『NBA 2K26』通常版 (Windows PC)",
+          "PublisherName": "2K",
+          "DeveloperName": "Visual Concepts"
+        }
+      ],
+      "MarketProperties": [
+        {
+          "OriginalReleaseDate": "2026-04-03T15:00:00.0000000Z"
+        }
+      ]
+    },
+    {
+      "ProductId": "9P1P7DWHBDBD",
+      "LocalizedProperties": [
+        {
+          "ProductTitle": "『スター・ウォーズ 無法者たち』",
+          "PublisherName": "Ubisoft",
+          "DeveloperName": ""
+        }
+      ],
+      "MarketProperties": [
+        {
+          "OriginalReleaseDate": "2026-07-21T14:00:00.0000000Z"
+        }
+      ]
+    },
+    {
+      "ProductId": "9NPDN9R45JX4",
+      "LocalizedProperties": [
+        {
+          "ProductTitle": "1000xRESIST",
+          "PublisherName": "Fellow Traveller",
+          "DeveloperName": "sunset visitor 斜陽過客"
+        }
+      ],
+      "MarketProperties": [
+        {
+          "OriginalReleaseDate": "2025-11-04T16:00:00.0000000Z"
+        }
+      ]
+    }
+  ]
+}
